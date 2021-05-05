@@ -1,6 +1,6 @@
 from flask import Flask, render_template, request, redirect, url_for, flash
 from flask_sqlalchemy import SQLAlchemy
-from sqlalchemy.dialects import postgresql; postgresql.UUID()
+
  
  
  
@@ -8,7 +8,7 @@ app = Flask(__name__)
 app.secret_key = "Secret Key"
  
 #SqlAlchemy Database Configuration With Mysql
-app.config['SQLALCHEMY_DATABASE_URI'] = 'mysq://root:root@localhost/crud'
+app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://root:root@localhost/crud'
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
  
 db = SQLAlchemy(app)
